@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+<p align="center">
+  <img alt="CometChat" src="https://assets.cometchat.io/website/images/logos/banner.png">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Push Notification App
 
-## Available Scripts
+CometChat Push Notification Sample App is a fully functional push notification app capable of one-on-one (private) and group messaging, and Calling. This sample app enables users to send and receive push notifications for text and multimedia messages like **images, videos, documents** and **Custom Messages**. Also, users can make push notifications for Audio and Video calls to other users or groups.
 
-In the project directory, you can run:
+<hr/>
 
-### `npm start`
+## Pre-requisite :star:
+1. Login to the <a href="https://app.cometchat.io/" target="_blank">CometChat Dashboard</a>.
+2. Select an existing app or create a new one.
+3. Go to the credentials section and copy the `Auth` key from the credentials tab.
+4. Go to the "Extensions" section and Enable the Push Notifications extension.
+5. Go to the "Installed" tab in the same section to open the settings for this extension and Set the version to Token-based(V2).
+6. Also, save the `FCM Server key` (received from [Firebase Console](https://console.firebase.google.com/)) in the Settings and click on Save.
+7. Copy the `APP_ID`, `REGION`, and `AUTH_KEY` for your app.
+</br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ 
+## Installation :wrench:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/cometchat/cometchat-push-notification-app-react.git
+    ```
+2. Open the project in VS Code
+3. Install the dependencies
+   ```sh
+   npm i
+    ```
+4. Refer to the step from [documentation](https://www.cometchat.com/docs/extensions/web-push-notifications) to configure the app to use FCM.
+5. Run the app
+   ```
+   npm run start
+   ```
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Help and Support
+For issues running the project or integrating with our UI Kits, consult our [documentation](https://www.cometchat.com/docs/extensions/web-push-notifications) or create a [support ticket](https://help.cometchat.com/hc/en-us) or seek real-time support via the [CometChat Dashboard](https://app.cometchat.com/).
