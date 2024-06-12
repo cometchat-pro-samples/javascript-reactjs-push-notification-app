@@ -55,7 +55,7 @@ export function Signup({
         `User having uid: ${createdUser.getUid()} created successfully.`
       );
       setLoggedInUser(createdUser);
-      // Don't think resetting states makes a difference since I am navigating to a different page
+
       setName("");
       setUid("");
       setGenerateUid(false);

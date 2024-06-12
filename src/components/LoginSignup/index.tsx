@@ -15,7 +15,6 @@ import {
 
 import { CometChatThemeContext } from "@cometchat/chat-uikit-react";
 import Image from "../../assets/Image-518@1x.png";
-// import { IsMobileViewContext } from "../../IsMobileViewContext";
 import { useContext } from "react";
 import { IsMobileViewContext } from "../../IsMobileViewContext";
 

@@ -9,6 +9,8 @@ import { UIKitSettingsBuilder } from "@cometchat/uikit-shared";
 import { CometChatConstants } from "./const";
 import { CometChatUIKit } from "@cometchat/chat-uikit-react";
 import { CometChatCalls } from "@cometchat/calls-sdk-javascript";
+import { CometChat } from "@cometchat/chat-sdk-javascript";
+
 (async () => {
   const uiKitSettings = new UIKitSettingsBuilder()
     .setAppId(CometChatConstants.appId)
@@ -23,6 +25,12 @@ import { CometChatCalls } from "@cometchat/calls-sdk-javascript";
     .build();
 
   try {
+    CometChat.setDemoMetaInfo({
+      name: "push-notification-sample-app-javascript",
+      platform: "react",
+      type: "push-notification-sample-app-javascript",
+      version: "1.0",
+    });
     await CometChatUIKit.init(uiKitSettings);
     await CometChatCalls.init(callAppSetting);
     console.log("Initialization completed successfully");
@@ -65,12 +73,9 @@ async function askPermission() {
     }
   }).then(function (permissionResult) {
     if (permissionResult !== "granted") {
-      // throw new Error("We weren't granted permission.");
-      console.log("permission not granted");
+      console.log("Permission not granted");
     }
   });
 }
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();

@@ -1,7 +1,8 @@
 
 import { initializeApp } from "firebase/app";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
-import { CometChat } from "@cometchat/chat-sdk-javascript";
+import { CometChatNotifications } from "@cometchat/chat-sdk-javascript";
+import { CometChatConstants } from "./const";
 export default async function firebaseInitialize(navigate) {
   const firebaseConfig = {
     apiKey: "xxxxxxxxxxxxxxxxxxxxx",
@@ -22,7 +23,11 @@ export default async function firebaseInitialize(navigate) {
   })
     .then((currentToken) => {
       if (currentToken) {
-        CometChat.registerTokenForPushNotification(currentToken)
+        CometChatNotifications.registerPushToken(
+          currentToken,
+          CometChatNotifications.PushPlatforms.FCM_WEB,
+          CometChatConstants.fcmProviderId
+        )
           .then((payload) => {
             console.log("from comet", payload);
             console.log("curr token", currentToken);
@@ -41,20 +46,6 @@ export default async function firebaseInitialize(navigate) {
     });
 
   onMessage(messaging, function (payload) {
-    
-    const messageData = JSON.parse(payload.data.message);
-    const myIcon = messageData?.data?.entities?.sender?.entity?.avatar;
-    var notificationTitle = payload.data.title;
-    var notificationOptions = {
-      body: `${payload.data.title}: ${payload.data.alert}`,
-      icon: myIcon,
-    };
-    var notification = new Notification(notificationTitle, notificationOptions);
-    notification.onclick = function (event) {
-      if(navigate) {
-        navigate('/conversationsWithMessages',{state:messageData})
-        return
-      }
-    };
+    console.log("Got message",payload)
   });
 }
