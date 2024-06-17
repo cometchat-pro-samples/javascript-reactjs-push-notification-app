@@ -1,15 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-
 import "./index.css";
+
 import App from "./components/App/App";
-import reportWebVitals from "./reportWebVitals";
-import { UIKitSettingsBuilder } from "@cometchat/uikit-shared";
+import { BrowserRouter } from "react-router-dom";
+import { CometChat } from "@cometchat/chat-sdk-javascript";
+import { CometChatCalls } from "@cometchat/calls-sdk-javascript";
 import { CometChatConstants } from "./const";
 import { CometChatUIKit } from "@cometchat/chat-uikit-react";
-import { CometChatCalls } from "@cometchat/calls-sdk-javascript";
-import { CometChat } from "@cometchat/chat-sdk-javascript";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { UIKitSettingsBuilder } from "@cometchat/uikit-shared";
+import reportWebVitals from "./reportWebVitals";
 
 (async () => {
   const uiKitSettings = new UIKitSettingsBuilder()
@@ -29,7 +29,7 @@ import { CometChat } from "@cometchat/chat-sdk-javascript";
       name: "push-notification-sample-app-javascript",
       platform: "react",
       type: "push-notification-sample-app-javascript",
-      version: "1.0",
+      version: "0.1.1",
     });
     await CometChatUIKit.init(uiKitSettings);
     await CometChatCalls.init(callAppSetting);
