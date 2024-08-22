@@ -29,17 +29,17 @@ npm i
 3. Paste the `firebaseConfig` in the correct location as per FCM's documentation.
 4. Add your app credentials like `appId`, `region`, `authKey` in the `src/const.ts`.
 5. Also add the `fcmProviderId` in `src/const.ts` as that is required while registering push token.
-6. Run the sample app.
-
+6. Add `vapidKey` obtained from the Firebase console -> Cloud Messaging -> Web Push Certificates to the `firebase.js`.
+7. Run the sample app.
 ```
 npm start
 ```
 
-6. Once the app opens up in a browser, login with a user.
-7. Allow the permission to display push notifications.
-8. Send a message or call to the logged in user from another browser/device.
-9. You should see a push notification for a message.
-10. Tap on the notification to open the Sample app for message.
+8. Once the app opens up in a browser, login with a user.
+9. Allow the permission to display push notifications.
+10. Send a message or call to the logged in user from another browser/device.
+11. You should see a push notification for a message.
+12. Tap on the notification to open the Sample app for message.
 
 ## Help and Support
 
